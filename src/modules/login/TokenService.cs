@@ -23,6 +23,11 @@ namespace sto_api_gateway.src.modules.login
                 throw new InvalidOperationException("A chave Jwt:Key não foi configurada.");
             }
 
+            if (Encoding.UTF8.GetByteCount(secretKey) < 16)
+            {
+                throw new InvalidOperationException("A chave JWT deve ter no mínimo 16 caracteres (128 bits) para HS256.");
+            }
+
             var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(secretKey));
             var credentials = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
