@@ -34,9 +34,6 @@ namespace sto_api_gateway.src.modules.login
             var claims = new[]
             {
                 new Claim("Id", user.Id.ToString()),
-                new Claim("Username", user.Username),
-                new Claim("Email", user.Email ?? string.Empty),
-                new Claim("FullName", user.FullName ?? string.Empty)
             };
 
             var token = new JwtSecurityToken(

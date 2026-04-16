@@ -8,14 +8,13 @@ namespace sto_api_gateway.src.modules.login
             public string Username { get; set; } = string.Empty;
             public string Password { get; set; } = string.Empty;
             public string FullName { get; set; } = string.Empty;
+            public long Cpf { get; set; }
+            public long Phone { get; set; }
         }
 
         public class RegisterResponse
         {
             public int Id { get; set; }
-            public string Email { get; set; } = string.Empty;
-            public string Username { get; set; } = string.Empty;
-            public string FullName { get; set; } = string.Empty;
             public string Message { get; set; } = string.Empty;
         }
 
@@ -28,9 +27,6 @@ namespace sto_api_gateway.src.modules.login
         public class AuthenticateResponse
         {
             public int Id { get; set; }
-            public string Email { get; set; } = string.Empty;
-            public string Username { get; set; } = string.Empty;
-            public string FullName { get; set; } = string.Empty;
             public string Token { get; set; } = string.Empty;
         }
     }

@@ -28,8 +28,8 @@ namespace sto_api_gateway.src.modules.login
             string passwordHash = BCrypt.Net.BCrypt.HashPassword(request.Password);
 
             string sql = @"
-                INSERT INTO USERS_STO (USERNAME, EMAIL, PASSWORD_HASH, FULL_NAME, IS_ACTIVE, CREATED_AT)
-                VALUES (:USERNAME, :EMAIL, :PASSWORD_HASH, :FULL_NAME, 1, SYSDATE)
+                INSERT INTO USERS_STO (USERNAME, EMAIL, PASSWORD_HASH, FULL_NAME, CPF, PHONE, IS_ACTIVE, CREATED_AT)
+                VALUES (:USERNAME, :EMAIL, :PASSWORD_HASH, :FULL_NAME, :CPF, :PHONE, 1, SYSDATE)
                 RETURNING ID INTO :ID";
 
             using var command = new OracleCommand(sql, connection);
@@ -38,6 +38,8 @@ namespace sto_api_gateway.src.modules.login
             command.Parameters.Add(":EMAIL", OracleDbType.Varchar2).Value = request.Email;
             command.Parameters.Add(":PASSWORD_HASH", OracleDbType.Varchar2).Value = passwordHash;
             command.Parameters.Add(":FULL_NAME", OracleDbType.Varchar2).Value = request.FullName;
+            command.Parameters.Add(":CPF", OracleDbType.Int64).Value = request.Cpf;
+            command.Parameters.Add(":PHONE", OracleDbType.Int64).Value = request.Phone;
             command.Parameters.Add(":ID", OracleDbType.Int32).Direction = System.Data.ParameterDirection.Output;
 
             command.ExecuteNonQuery();
@@ -47,9 +49,6 @@ namespace sto_api_gateway.src.modules.login
             return new RegisterResponse
             {
                 Id = id,
-                FullName = request.FullName,
-                Email = request.Email,
-                Username = request.Username,
                 Message = "Usuário registrado com sucesso."
             };
         }
@@ -63,7 +62,7 @@ namespace sto_api_gateway.src.modules.login
             connection.Open();
 
             string sql = @"
-                SELECT ID, USERNAME, EMAIL, FULL_NAME, PASSWORD_HASH, IS_ACTIVE
+                SELECT ID, USERNAME, PASSWORD_HASH, IS_ACTIVE
                 FROM USERS_STO
                 WHERE USERNAME = :USERNAME";
 
@@ -96,9 +95,6 @@ namespace sto_api_gateway.src.modules.login
             var response = new AuthenticateResponse
             {
                 Id = Convert.ToInt32(reader["ID"]),
-                Username = reader["USERNAME"].ToString() ?? string.Empty,
-                Email = reader["EMAIL"].ToString() ?? string.Empty,
-                FullName = reader["FULL_NAME"].ToString() ?? string.Empty,
                 Token = string.Empty
             };
 
@@ -113,11 +109,13 @@ namespace sto_api_gateway.src.modules.login
                 SELECT COUNT(1)
                 FROM USERS_STO
                 WHERE USERNAME = :USERNAME
-                   OR EMAIL = :EMAIL";
+                   OR EMAIL = :EMAIL
+                   OR CPF = :CPF";
 
             using var command = new OracleCommand(sql, connection);
             command.Parameters.Add(":USERNAME", OracleDbType.Varchar2).Value = request.Username;
             command.Parameters.Add(":EMAIL", OracleDbType.Varchar2).Value = request.Email;
+            command.Parameters.Add(":CPF", OracleDbType.Int64).Value = request.Cpf;
 
             int count = Convert.ToInt32(command.ExecuteScalar());
 

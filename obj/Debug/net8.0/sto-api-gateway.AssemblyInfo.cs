@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("sto-api-gateway")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f1cbe34a75f2ca2c69aac59917134500360590a5")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+6a309753948042d7a16f3ef9ef63a71ea336a00c")]
 [assembly: System.Reflection.AssemblyProductAttribute("sto-api-gateway")]
 [assembly: System.Reflection.AssemblyTitleAttribute("sto-api-gateway")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

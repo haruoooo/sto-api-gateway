@@ -1,5 +1,6 @@
 using DotNetEnv;
 using sto_api_gateway.src.modules.login;
+using sto_api_gateway.src.modules.users;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -13,6 +14,7 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<LoginService>();
 builder.Services.AddScoped<TokenService>();
+builder.Services.AddScoped<UsersService>();
 
 var app = builder.Build();
 

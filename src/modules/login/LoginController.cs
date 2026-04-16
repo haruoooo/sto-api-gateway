@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using static sto_api_gateway.src.modules.login.LoginDto;
 
 namespace sto_api_gateway.src.modules.login
 {
@@ -14,7 +15,7 @@ namespace sto_api_gateway.src.modules.login
         }
 
         [HttpPost("register")]
-        public IActionResult Register([FromBody] LoginDto.RegisterRequest request)
+        public IActionResult Register([FromBody] RegisterRequest request)
         {
             if (request == null ||
                 string.IsNullOrWhiteSpace(request.FullName) ||
@@ -44,7 +45,7 @@ namespace sto_api_gateway.src.modules.login
         }
 
         [HttpPost("authenticate")]
-        public IActionResult Authenticate([FromBody] LoginDto.AuthenticateRequest request)
+        public IActionResult Authenticate([FromBody] AuthenticateRequest request)
         {
             if (request == null ||
                 string.IsNullOrWhiteSpace(request.Username) ||
