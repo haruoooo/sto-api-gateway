@@ -1,0 +1,14 @@
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.csproj.AssemblyReference.cache
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\rpswa.dswa.cache.json
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.AssemblyInfoInputs.cache
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.AssemblyInfo.cs
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.csproj.CoreCompileInputs.cache
+C:\Users\matheus.omori\Desktop\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.csproj.AssemblyReference.cache
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.AssemblyInfoInputs.cache
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.AssemblyInfo.cs
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.csproj.CoreCompileInputs.cache
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\labsfiap\Desktop\sto-api-gateway\sto-api-gateway\obj\Debug\net8.0\sto-api-gateway.sourcelink.json
