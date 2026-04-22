@@ -1,0 +1,1 @@
+Rode com dotnet run
