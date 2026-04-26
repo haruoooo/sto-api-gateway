@@ -121,7 +121,7 @@ namespace sto_api_gateway.src.modules.login
 
             if (count > 0)
             {
-                throw new Exception("Já existe usuário com este nome de usuário ou e-mail.");
+                throw new Exception("Já existe um usuário com estas credenciais.");
             }
         }
     }
